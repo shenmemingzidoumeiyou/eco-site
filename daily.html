@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常环保 - 生态守护者</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 日常环保页面特有样式（可保留在页面内，也可移至全局 style.css） */
+        .tips-category {
+            margin-bottom: 40px;
+        }
+        .category-title {
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2c6e49;
+            display: inline-block;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 20px 0 30px;
+        }
+        .tip-item {
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border-left: 5px solid #2c6e49;
+        }
+        .tip-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .tip-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #1e3a2f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tip-item h3 i {
+            color: #2c6e49;
+            font-size: 1.5rem;
+        }
+        .tip-item p {
+            color: #4a5b55;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .tip-stats {
+            font-size: 0.85rem;
+            color: #2c6e49;
+            background: #ebf5f0;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+        .daily-challenge {
+            background: linear-gradient(135deg, #e0f0e8, #c8e0d4);
+            border-radius: 32px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .daily-challenge h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .challenge-text {
+            font-size: 1.2rem;
+            background: white;
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 60px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        .tip-btn {
+            background: #2c6e49;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .tip-btn:hover {
+            background: #1f5438;
+        }
+        @media (max-width: 768px) {
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html"><i class="fas fa-leaf"></i><span>生态守护者</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="daily.html" class="active">日常环保</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="forum.html">论坛</a></li>
+            </ul>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>🌿 日常环保行动指南</h1>
+            <p>从今天开始，每一个小习惯都能让地球更美好</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 节水篇 -->
+        <div class="tips-category">
+            <h2 class="category-title">💧 节约用水</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-faucet"></i> 一水多用</h3>
+                    <p>洗菜水、淘米水可浇花；洗衣水、洗澡水可拖地、冲厕所。一个家庭每天可节约50升水。</p>
+                    <span class="tip-stats">每年可省约18吨水</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-tooth"></i> 刷牙关水</h3>
+                    <p>刷牙时关掉水龙头，每次可节约6升水。全家每天刷牙两次，一年可省下近9吨水。</p>
+                    <span class="tip-stats">相当于450桶桶装水</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-shower"></i> 缩短淋浴时间</h3>
+                    <p>淋浴时间每缩短1分钟，可节约10升水。设定5分钟淋浴，每年可省20吨水。</p>
+                    <span class="tip-stats">减少碳排放约6kg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 节电篇 -->
+        <div class="tips-category">
+            <h2 class="category-title">⚡ 节约用电</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-lightbulb"></i> 随手关灯</h3>
+                    <p>离开房间随手关灯，使用LED节能灯。一个家庭每月可省电10-15度。</p>
+                    <span class="tip-stats">每年减碳约100kg</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-plug"></i> 拔掉待机电源</h3>
+                    <p>电视、电脑、充电器等待机功耗占总耗电5%-10%。用完拔插头或使用带开关的插座。</p>
+                    <span class="tip-stats">每年省电约100度</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-thermometer-half"></i> 空调调高1℃</h3>
+                    <p>夏天空调设26-28℃，每调高1℃可省电6%-8%。配合风扇使用，体感更舒适。</p>
+                    <span class="tip-stats">一台空调每年省电约150度</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 减塑篇 -->
+        <div class="tips-category">
+            <h2 class="category-title">🥤 减少一次性塑料</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-shopping-bag"></i> 自带购物袋</h3>
+                    <p>拒绝塑料袋，使用布袋或重复使用的编织袋。每个塑料袋使用平均仅12分钟，降解却需数百年。</p>
+                    <span class="tip-stats">每年减少300个塑料袋</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-mug-hot"></i> 自带水杯/咖啡杯</h3>
+                    <p>一次性纸杯内壁有塑料淋膜，难以回收。自带水杯每年可减少200个一次性杯子。</p>
+                    <span class="tip-stats">减少塑料垃圾约5kg/年</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-utensils"></i> 拒绝一次性餐具</h3>
+                    <p>点外卖时选择“无需餐具”，随身携带便携餐具套装。全国每年外卖消耗近百亿套一次性餐具。</p>
+                    <span class="tip-stats">你的选择很关键</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 绿色出行 -->
+        <div class="tips-category">
+            <h2 class="category-title">🚲 绿色出行</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-walking"></i> 短途步行/骑行</h3>
+                    <p>3公里内步行或骑行，既锻炼身体又零碳。每少开1公里车，减碳0.22kg。</p>
+                    <span class="tip-stats">每天5公里，年减碳约400kg</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-bus"></i> 公交地铁通勤</h3>
+                    <p>公共交通人均碳排放仅为私家车的1/10。选择地铁、公交，缓解拥堵又环保。</p>
+                    <span class="tip-stats">每月减碳约50kg</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-car"></i> 拼车出行</h3>
+                    <p>与同事、邻居拼车上下班，减少车辆空驶率。每周拼车3次，年减碳约300kg。</p>
+                    <span class="tip-stats">还能节省油费</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 节约粮食 -->
+        <div class="tips-category">
+            <h2 class="category-title">🍚 光盘行动·节约粮食</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-utensil-spoon"></i> 按需点餐</h3>
+                    <p>外出就餐点菜适量，不够再添。剩菜打包，不丢面子只丢浪费。</p>
+                    <span class="tip-stats">全国每年浪费粮食约3500万吨</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-seedling"></i> 巧用剩饭剩菜</h3>
+                    <p>剩饭做炒饭、煮粥；蔬菜边角料做汤。创意烹饪减少浪费。</p>
+                    <span class="tip-stats">每个家庭每月省100元</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-apple-alt"></i> 购买“丑蔬果”</h3>
+                    <p>外型不完美的蔬果营养相同却常被丢弃。支持丑果入市，减少田间浪费。</p>
+                    <span class="tip-stats">全球1/3食物被浪费</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 垃圾分类回收 -->
+        <div class="tips-category">
+            <h2 class="category-title">🗑️ 垃圾分类与回收</h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3><i class="fas fa-recycle"></i> 四分类要记清</h3>
+                    <p>可回收物（纸塑玻金衣）、厨余垃圾（剩饭果皮）、有害垃圾（电池药品）、其他垃圾。正确分类提高资源率。</p>
+                    <span class="tip-stats">1吨废纸=拯救17棵树</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-box-open"></i> 快递箱重复利用</h3>
+                    <p>拆开的快递箱压平，用于下次寄件或做收纳盒。胶带尽量少用。</p>
+                    <span class="tip-stats">每年约500亿个快递包裹</span>
+                </div>
+                <div class="tip-item">
+                    <h3><i class="fas fa-battery-full"></i> 有害垃圾单独放</h3>
+                    <p>废电池、过期药品、废灯管含有毒物质，请投入专用回收箱，切勿混入生活垃圾。</p>
+                    <span class="tip-stats">一节电池污染一平方米土壤</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 每日挑战 -->
+        <div class="daily-challenge">
+            <h3>✨ 今日环保挑战</h3>
+            <div class="challenge-text" id="dailyChallenge">自带水杯，拒绝瓶装水一天</div>
+            <button id="newChallengeBtn" class="tip-btn">换一个挑战</button>
+            <p style="margin-top: 15px; opacity: 0.8;">完成挑战后，去论坛分享你的环保成果吧！</p>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-container">
+        <div class="footer-about">
+            <h3><i class="fas fa-leaf"></i> 生态守护者</h3>
+            <p>致力于传播日常环保知识，让每个人都能轻松参与地球保护。</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="daily.html">日常环保</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="forum.html">论坛</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 环保热线 123-4567</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+    // 每日环保挑战数据
+    const challenges = [
+        "自带水杯，拒绝瓶装水一天",
+        "午餐光盘，不剩一粒米",
+        "步行或骑行代替开车3公里",
+        "收集快递箱，送到回收站",
+        "洗澡时间控制在5分钟内",
+        "拒绝塑料袋，用布袋购物",
+        "将厨余垃圾单独分类",
+        "看完电视拔掉插头",
+        "用洗菜水浇花一次",
+        "发一条环保动态，影响朋友"
+    ];
+
+    const challengeEl = document.getElementById('dailyChallenge');
+    const challengeBtn = document.getElementById('newChallengeBtn');
+
+    function updateRandomChallenge() {
+        const randomIndex = Math.floor(Math.random() * challenges.length);
+        challengeEl.textContent = challenges[randomIndex];
+    }
+
+    if (challengeBtn) {
+        challengeBtn.addEventListener('click', updateRandomChallenge);
+    }
+
+    // 页面加载时随机选一个挑战
+    updateRandomChallenge();
+</script>
+</body>
+</html>

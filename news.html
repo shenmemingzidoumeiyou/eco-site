@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新闻动态 - 守护自然</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="logo">🌳 守护自然</div>
+    <ul class="nav-list">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="daily.html">日常环保</a></li>
+      <li><a href="news.html" class="active">新闻动态</a></li>
+      <li><a href="forum.html">论坛</a></li>
+    </ul>
+    <div class="theme-toggle" id="themeToggle">🌙</div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">新闻动态</h1>
+    <!-- 关键：id 必须为 newsGrid，与 script.js 匹配 -->
+    <div class="news-grid" id="newsGrid">
+      <div class="loading">正在加载新闻...</div>
+    </div>
+  </div>
+</main>
+
+<button id="backToTop" class="back-to-top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

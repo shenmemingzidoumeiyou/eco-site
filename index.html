@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>守护自然 - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 头部导航栏 -->
+<header class="header">
+    <div class="container">
+        <div class="logo">🌳 守护自然</div>
+        <ul class="nav-list">
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="daily.html">日常环保</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="forum.html">论坛</a></li>
+        </ul>
+        <div class="theme-toggle" id="themeToggle">🌙</div>
+    </div>
+</header>
+
+<!-- 轮播图区域 -->
+<section class="banner">
+    <div class="banner-slider" id="bannerSlider">
+        <div class="slide active" style="background-image: url('images/green-mountain.jpg');">
+            <div class="slide-content">
+                <h2>守护森林，就是守护未来</h2>
+                <p>每棵树都是地球的呼吸，一起行动!</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('images/military-green.jpg');">
+            <div class="slide-content">
+                <h2>恢复生态，让万物共存</h2>
+                <p>给其他生物留一席之地，也是为我们留一线生机</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('images/panda.jpg');">
+            <div class="slide-content">
+                <h2>保护生物多样性</h2>
+                <p>让濒危物种重获家园</p>
+            </div>
+        </div>
+    </div>
+    <button class="banner-btn prev" id="prevBtn">❮</button>
+    <button class="banner-btn next" id="nextBtn">❯</button>
+    <div class="dots" id="dots"></div>
+</section>
+
+<main>
+    <!-- 如何保护自然 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">如何保护自然</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">♻️</div>
+                    <h3>日常减塑，拒绝白色污染</h3>
+                    <p>减少一次性塑料制品使用，自带购物袋和水杯，选择无塑料包装商品。</p>
+                    <a href="https://baike.baidu.com/item/%E7%99%BD%E8%89%B2%E6%B1%A1%E6%9F%93" target="_blank" rel="noopener noreferrer" class="card-link">了解更多 →</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>节约用电，降低碳足迹</h3>
+                    <p>随手关灯，使用节能家电，合理设置空调温度。每节约1度电，可减少约0.997千克的二氧化碳排放。</p>
+                    <a href="https://baike.baidu.com/item/%E7%A2%B3%E8%B6%B3%E8%BF%B9" target="_blank" rel="noopener noreferrer" class="card-link">了解更多 →</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🗑️</div>
+                    <h3>垃圾分类，促进资源循环</h3>
+                    <p>正确分类投放垃圾，促进可回收物的循环利用，减少对环境的污染。</p>
+                    <a href="https://baike.baidu.com/item/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB" target="_blank" rel="noopener noreferrer" class="card-link">了解更多 →</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🍽️</div>
+                    <h3>减少食物浪费，践行光盘行动</h3>
+                    <p>按需采购和点餐，合理储存食物。全球每年约有1/3的食物被浪费，这也造成了巨大的资源浪费和温室气体排放。</p>
+                    <a href="https://baike.baidu.com/item/%E9%A3%9F%E7%89%A9%E6%B5%AA%E8%B4%B9" target="_blank" rel="noopener noreferrer" class="card-link">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 媒体报道（年份筛选 + 动态卡片） -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">媒体报道</h2>
+            <!-- 年份筛选按钮 -->
+            <div class="year-filter" id="yearFilter">
+                <button class="filter-btn active" data-year="all">全部</button>
+                <button class="filter-btn" data-year="2026">2026</button>
+                <button class="filter-btn" data-year="2025">2025</button>
+                <button class="filter-btn" data-year="2024">2024</button>
+                <button class="filter-btn" data-year="2023">2023</button>
+            </div>
+            <!-- 新闻卡片网格（动态渲染） -->
+            <div class="news-grid" id="newsGrid"></div>
+        </div>
+    </section>
+</main>
+
+<!-- 回到顶部按钮 -->
+<button id="backToTop" class="back-to-top">↑</button>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

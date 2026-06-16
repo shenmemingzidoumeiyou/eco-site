@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环保论坛 - 生态守护者</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 论坛专用样式（如果没有则添加） */
+        .forum-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .forum-status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f0f5f0;
+            padding: 12px 20px;
+            border-radius: 60px;
+            margin-bottom: 30px;
+        }
+        .user-info {
+            font-weight: 500;
+            color: #2c6e49;
+        }
+        .small-btn {
+            padding: 6px 18px;
+            font-size: 0.9rem;
+            background: #2c6e49;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        .post-form-area {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e0e8e0;
+        }
+        .post-form-area h3 {
+            margin-bottom: 16px;
+            color: #1e2a32;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            margin-bottom: 16px;
+            font-family: inherit;
+        }
+        .btn-submit {
+            background: #2c6e49;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .post-card {
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2ebe2;
+        }
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #4a6a5e;
+        }
+        .post-title {
+            font-size: 1.25rem;
+            margin: 8px 0 12px;
+            color: #2c6e49;
+        }
+        .post-content {
+            line-height: 1.5;
+            color: #2d3e40;
+        }
+        .placeholder-text {
+            text-align: center;
+            color: #8aa89a;
+            padding: 40px;
+            background: #fafcfa;
+            border-radius: 24px;
+        }
+        /* 模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 32px;
+            width: 90%;
+            max-width: 420px;
+            padding: 24px;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #888;
+        }
+        .modal-tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            padding: 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: #5a7a6e;
+        }
+        .tab-btn.active {
+            color: #2c6e49;
+            border-bottom: 2px solid #2c6e49;
+        }
+        .auth-form {
+            display: none;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .auth-form.active {
+            display: flex;
+        }
+        .btn-primary {
+            background: #2c6e49;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html"><i class="fas fa-leaf"></i><span>生态守护者</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="daily.html">日常环保</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="forum.html" class="active">论坛</a></li>
+            </ul>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <h1>环保论坛</h1>
+            <p>分享你的环保见解，与守护者们一起交流</p>
+        </div>
+    </section>
+
+    <div class="forum-container">
+        <!-- 登录状态栏 -->
+        <div class="forum-status-bar">
+            <div class="user-info" id="userInfoArea">
+                <i class="fas fa-user-circle"></i> 未登录
+            </div>
+            <button id="loginBtn" class="small-btn">登录 / 注册</button>
+        </div>
+
+        <!-- 发帖表单 (登录后可见) -->
+        <div id="postFormArea" class="post-form-area" style="display: none;">
+            <h3><i class="fas fa-edit"></i> 发表新话题</h3>
+            <form id="newPostForm">
+                <div class="form-group">
+                    <input type="text" id="postTitle" placeholder="标题" required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <textarea id="postContent" rows="3" placeholder="内容" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">发布帖子</button>
+            </form>
+        </div>
+
+        <!-- 帖子列表 -->
+        <div class="forum-posts">
+            <h3><i class="fas fa-comments"></i> 全部话题 <span id="postCount">0</span></h3>
+            <div id="postsList" class="posts-list">
+                <div class="placeholder-text">暂无帖子，登录后成为第一个发言者吧！</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录/注册模态框 -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">登录</button>
+                <button class="tab-btn" data-tab="register">注册</button>
+            </div>
+            <!-- 登录表单 -->
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <input type="text" id="loginUsername" placeholder="用户名" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="密码" required>
+                </div>
+                <button type="submit" class="btn-primary">登录</button>
+            </form>
+            <!-- 注册表单 -->
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <input type="text" id="regUsername" placeholder="用户名 (3-20字符)" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regPassword" placeholder="密码 (至少4位)" required>
+                </div>
+                <button type="submit" class="btn-primary">注册</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-container">
+        <div class="footer-about"><h3><i class="fas fa-leaf"></i> 生态守护者</h3><p>致力于传播日常环保知识，让每个人都能轻松参与地球保护。</p><div class="social-links"><a href="#"><i class="fab fa-weixin"></i></a><a href="#"><i class="fab fa-weibo"></i></a></div></div>
+        <div class="footer-links"><h4>快速链接</h4><ul><li><a href="index.html">首页</a></li><li><a href="daily.html">日常环保</a></li><li><a href="news.html">新闻动态</a></li><li><a href="forum.html">论坛</a></li></ul></div>
+        <div class="footer-contact"><h4>联系我们</h4><p><i class="fas fa-envelope"></i> eco@guardian.org</p><p><i class="fas fa-phone-alt"></i> 环保热线 123-4567</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 生态守护者 | 从日常做起，改变地球</p></div>
+</footer>
+
+<script src="js/script.js"></script>
+<!-- 内嵌论坛完整逻辑，不依赖外部脚本 -->
+<script>
+    (function() {
+        // 数据存储 key
+        const USERS_KEY = 'forum_users';
+        const POSTS_KEY = 'forum_posts';
+        const CURRENT_USER_KEY = 'forum_current_user';
+
+        // 初始化默认数据
+        function initData() {
+            if (!localStorage.getItem(USERS_KEY)) {
+                const defaultUsers = [
+                    { username: '守护者', password: '123456' },
+                    { username: '地球卫士', password: 'abc123' }
+                ];
+                localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
+            }
+            if (!localStorage.getItem(POSTS_KEY)) {
+                const defaultPosts = [
+                    { id: Date.now(), author: '守护者', title: '欢迎来到环保论坛', content: '让我们一起为地球发声！', timestamp: new Date().toISOString() }
+                ];
+                localStorage.setItem(POSTS_KEY, JSON.stringify(defaultPosts));
+            }
+        }
+
+        // 获取当前用户
+        function getCurrentUser() {
+            const user = localStorage.getItem(CURRENT_USER_KEY);
+            return user ? JSON.parse(user) : null;
+        }
+
+        // 设置当前用户
+        function setCurrentUser(user) {
+            if (user) {
+                localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+            } else {
+                localStorage.removeItem(CURRENT_USER_KEY);
+            }
+        }
+
+        // 渲染帖子列表
+        function renderPosts() {
+            const posts = JSON.parse(localStorage.getItem(POSTS_KEY)) || [];
+            const postsList = document.getElementById('postsList');
+            const postCountSpan = document.getElementById('postCount');
+            if (!postsList) return;
+            if (postCountSpan) postCountSpan.innerText = posts.length;
+
+            if (posts.length === 0) {
+                postsList.innerHTML = '<div class="placeholder-text">暂无帖子，快来发布第一个话题吧！</div>';
+                return;
+            }
+
+            function escapeHtml(str) {
+                return str.replace(/[&<>]/g, function(m) {
+                    if (m === '&') return '&amp;';
+                    if (m === '<') return '&lt;';
+                    if (m === '>') return '&gt;';
+                    return m;
+                });
+            }
+
+            postsList.innerHTML = posts.slice().reverse().map(post => `
+                    <div class="post-card">
+                        <div class="post-header">
+                            <strong><i class="fas fa-user"></i> ${escapeHtml(post.author)}</strong>
+                            <span class="post-time">${new Date(post.timestamp).toLocaleString()}</span>
+                        </div>
+                        <h4 class="post-title">${escapeHtml(post.title)}</h4>
+                        <div class="post-content">${escapeHtml(post.content)}</div>
+                    </div>
+                `).join('');
+        }
+
+        // 添加帖子
+        function addPost(title, content) {
+            const user = getCurrentUser();
+            if (!user) {
+                alert('请先登录');
+                return false;
+            }
+            const posts = JSON.parse(localStorage.getItem(POSTS_KEY)) || [];
+            const newPost = {
+                id: Date.now(),
+                author: user.username,
+                title: title.trim(),
+                content: content.trim(),
+                timestamp: new Date().toISOString()
+            };
+            posts.push(newPost);
+            localStorage.setItem(POSTS_KEY, JSON.stringify(posts));
+            renderPosts();
+            return true;
+        }
+
+        // 更新UI（登录状态）
+        function updateUI() {
+            const user = getCurrentUser();
+            const userInfoArea = document.getElementById('userInfoArea');
+            const loginBtn = document.getElementById('loginBtn');
+            const postFormArea = document.getElementById('postFormArea');
+
+            if (user) {
+                if (userInfoArea) userInfoArea.innerHTML = `<i class="fas fa-user-circle"></i> 欢迎，${escapeHtml(user.username)}`;
+                if (loginBtn) loginBtn.textContent = '登出';
+                if (postFormArea) postFormArea.style.display = 'block';
+            } else {
+                if (userInfoArea) userInfoArea.innerHTML = `<i class="fas fa-user-circle"></i> 未登录`;
+                if (loginBtn) loginBtn.textContent = '登录 / 注册';
+                if (postFormArea) postFormArea.style.display = 'none';
+            }
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        // 登出
+        function logout() {
+            setCurrentUser(null);
+            updateUI();
+            renderPosts();
+        }
+
+        // 登录
+        function login(username, password) {
+            const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+            const found = users.find(u => u.username === username && u.password === password);
+            if (found) {
+                setCurrentUser({ username: found.username });
+                updateUI();
+                closeModal();
+                renderPosts();
+                return true;
+            } else {
+                alert('用户名或密码错误');
+                return false;
+            }
+        }
+
+        // 注册
+        function register(username, password) {
+            const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+            if (users.find(u => u.username === username)) {
+                alert('用户名已存在');
+                return false;
+            }
+            if (username.length < 3 || password.length < 4) {
+                alert('用户名至少3个字符，密码至少4个字符');
+                return false;
+            }
+            users.push({ username, password });
+            localStorage.setItem(USERS_KEY, JSON.stringify(users));
+            alert('注册成功，请登录');
+            return true;
+        }
+
+        // 模态框操作
+        const modal = document.getElementById('authModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeModalBtn = document.querySelector('.close-modal');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        function openModal() {
+            if (modal) modal.style.display = 'flex';
+        }
+        function closeModal() {
+            if (modal) modal.style.display = 'none';
+        }
+
+        if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+                const user = getCurrentUser();
+                if (user) {
+                    logout();
+                } else {
+                    openModal();
+                }
+            });
+        }
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // 标签切换
+        if (tabBtns) {
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.getAttribute('data-tab');
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    if (tab === 'login') {
+                        loginForm.classList.add('active');
+                        registerForm.classList.remove('active');
+                    } else {
+                        registerForm.classList.add('active');
+                        loginForm.classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // 登录提交
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('loginUsername').value;
+                const password = document.getElementById('loginPassword').value;
+                login(username, password);
+            });
+        }
+
+        // 注册提交
+        if (registerForm) {
+            registerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('regUsername').value;
+                const password = document.getElementById('regPassword').value;
+                if (register(username, password)) {
+                    // 清空表单并切换到登录
+                    document.getElementById('regUsername').value = '';
+                    document.getElementById('regPassword').value = '';
+                    const loginTab = document.querySelector('.tab-btn[data-tab="login"]');
+                    if (loginTab) loginTab.click();
+                }
+            });
+        }
+
+        // 发帖提交
+        const newPostForm = document.getElementById('newPostForm');
+        if (newPostForm) {
+            newPostForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('postTitle').value;
+                const content = document.getElementById('postContent').value;
+                if (title && content) {
+                    if (addPost(title, content)) {
+                        document.getElementById('postTitle').value = '';
+                        document.getElementById('postContent').value = '';
+                        alert('发布成功！');
+                    }
+                } else {
+                    alert('请填写标题和内容');
+                }
+            });
+        }
+
+        // 初始化
+        initData();
+        updateUI();
+        renderPosts();
+    })();
+</script>
+</body>
+</html>
