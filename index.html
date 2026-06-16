@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>守护自然 - 首页</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- 修改为直接引用根目录的 style.css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- 头部导航栏 -->
 <header class="header">
     <div class="container">
         <div class="logo">🌳 守护自然</div>
@@ -21,10 +21,9 @@
     </div>
 </header>
 
-<!-- 轮播图区域 -->
 <section class="banner">
     <div class="banner-slider" id="bannerSlider">
-        <!-- 图片路径改为根目录 -->
+        <!-- 确保图片文件名与您仓库中的完全一致（包括扩展名） -->
         <div class="slide active" style="background-image: url('green-mountain.jpg');">
             <div class="slide-content">
                 <h2>守护森林，就是守护未来</h2>
@@ -50,7 +49,6 @@
 </section>
 
 <main>
-    <!-- 如何保护自然 -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">如何保护自然</h2>
@@ -83,11 +81,9 @@
         </div>
     </section>
 
-    <!-- 媒体报道（年份筛选 + 动态卡片） -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">媒体报道</h2>
-            <!-- 年份筛选按钮 -->
             <div class="year-filter" id="yearFilter">
                 <button class="filter-btn active" data-year="all">全部</button>
                 <button class="filter-btn" data-year="2026">2026</button>
@@ -95,15 +91,14 @@
                 <button class="filter-btn" data-year="2024">2024</button>
                 <button class="filter-btn" data-year="2023">2023</button>
             </div>
-            <!-- 新闻卡片网格（动态渲染） -->
             <div class="news-grid" id="newsGrid"></div>
         </div>
     </section>
 </main>
 
-<!-- 回到顶部按钮 -->
 <button id="backToTop" class="back-to-top">↑</button>
 
-<script src="js/script.js"></script>
+<!-- 修改为直接引用根目录的 script.js -->
+<script src="script.js"></script>
 </body>
 </html>
