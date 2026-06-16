@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ---------- 2. 媒体报道：央视网环保新闻（2023-2026） ----------
     (function initNews() {
-        // 新闻数据（包含 2023、2024、2025、2026 年央视网真实环保报道）
         var newsData = [
             // 2026年
             {
