@@ -72,7 +72,7 @@ body {
     cursor: pointer;
 }
 
-/* 移动端菜单（与之前一致） */
+/* 移动端菜单 */
 @media (max-width: 768px) {
     .nav-list {
         position: absolute;
@@ -208,7 +208,7 @@ body {
     color: #1e3a2f;
 }
 
-/* ===== 卡片网格（首页4个卡片） ===== */
+/* ===== 卡片网格 ===== */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -246,7 +246,7 @@ body {
     text-decoration: underline;
 }
 
-/* ===== 媒体报道：年份筛选 + 新闻卡片 ===== */
+/* ===== 新闻筛选 & 网格 ===== */
 .year-filter {
     display: flex;
     flex-wrap: wrap;
@@ -348,7 +348,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== 响应式适配 ===== */
+/* ===== 响应式 ===== */
 @media (max-width: 768px) {
     .slide-content h2 { font-size: 2rem; }
     .slide-content p { font-size: 1rem; }
