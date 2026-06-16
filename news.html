@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新闻动态 - 守护自然</title>
-  <link rel="stylesheet" href="style.css">
+    <title>日常环保 - 守护自然</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="header">
@@ -12,8 +12,8 @@
         <div class="logo">🌳 守护自然</div>
         <ul class="nav-list">
             <li><a href="index.html">首页</a></li>
-            <li><a href="daily.html">日常环保</a></li>
-            <li><a href="news.html" class="active">新闻动态</a></li>
+            <li><a href="daily.html" class="active">日常环保</a></li>
+            <li><a href="news.html">新闻动态</a></li>
             <li><a href="forum.html">论坛</a></li>
         </ul>
         <div class="theme-toggle" id="themeToggle">🌙</div>
@@ -22,14 +22,101 @@
 
 <main>
     <div class="container">
-        <h1 class="page-title">新闻动态</h1>
-        <div class="news-grid" id="newsGrid">
-            <div class="loading">正在加载新闻...</div>
+        <h1 class="page-title">日常环保行动指南</h1>
+        <p style="text-align:center; margin-bottom:40px;">从今天开始，每一个小习惯都能让地球更美好</p>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">💧</div>
+                <h3>一水多用</h3>
+                <p>洗菜水、淘米水可浇花；洗衣水、洗澡水可拖地、冲厕所。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>随手关灯</h3>
+                <p>离开房间随手关灯，使用LED节能灯，每月可省电10-15度。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🥤</div>
+                <h3>自带水杯</h3>
+                <p>拒绝一次性纸杯，自带水杯每年可减少200个一次性杯子。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚲</div>
+                <h3>短途骑行</h3>
+                <p>3公里内步行或骑行，每少开1公里车减碳0.22kg。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🍚</div>
+                <h3>光盘行动</h3>
+                <p>按需点餐，剩菜打包，减少食物浪费。</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🗑️</div>
+                <h3>垃圾分类</h3>
+                <p>可回收物、厨余垃圾、有害垃圾、其他垃圾要分清。</p>
+            </div>
+        </div>
+
+        <!-- 每日环保挑战区块 -->
+        <div class="daily-challenge" style="background: linear-gradient(135deg, #e0f0e8, #c8e0d4); border-radius: 32px; padding: 30px; text-align: center; margin: 40px 0;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">✨ 今日环保挑战</h3>
+            <div id="dailyChallenge" class="challenge-text" style="font-size: 1.2rem; background: white; display: inline-block; padding: 12px 24px; border-radius: 60px; margin: 15px 0; font-weight: 600;">
+                自带水杯，拒绝瓶装水一天
+            </div>
+            <button id="newChallengeBtn" class="tip-btn" style="background: #2c6e49; color: white; border: none; padding: 10px 24px; border-radius: 40px; font-size: 1rem; cursor: pointer; display: block; margin: 10px auto;">换一个挑战</button>
         </div>
     </div>
 </main>
 
 <button id="backToTop" class="back-to-top">↑</button>
+
 <script src="script.js"></script>
+<script>
+    // 每日环保挑战数据
+    const challenges = [
+        "自带水杯，拒绝瓶装水一天",
+        "午餐光盘，不剩一粒米",
+        "步行或骑行代替开车3公里",
+        "收集快递箱，送到回收站",
+        "洗澡时间控制在5分钟内",
+        "拒绝塑料袋，用布袋购物",
+        "将厨余垃圾单独分类",
+        "看完电视拔掉插头",
+        "用洗菜水浇花一次",
+        "发一条环保动态，影响朋友"
+    ];
+
+    const challengeEl = document.getElementById('dailyChallenge');
+    const challengeBtn = document.getElementById('newChallengeBtn');
+
+    function updateRandomChallenge() {
+        const randomIndex = Math.floor(Math.random() * challenges.length);
+        challengeEl.textContent = challenges[randomIndex];
+    }
+
+    if (challengeBtn) {
+        challengeBtn.addEventListener('click', updateRandomChallenge);
+    }
+
+    // 页面加载时随机选一个挑战
+    updateRandomChallenge();
+</script>
+
+<!-- 页脚（已删除“快速链接”部分） -->
+<footer class="site-footer">
+    <div class="container footer-container">
+        <div class="footer-about">
+            <h3><i class="fas fa-leaf"></i> 生态守护者</h3>
+            <p>致力于传播日常环保知识，让每个人都能轻松参与地球保护。</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+            </div>
+        </div>
+        <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 环保热线 123-4567</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
