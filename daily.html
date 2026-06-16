@@ -1,33 +1,10 @@
-<footer class="site-footer">
-    <div class="container footer-container">
-        <div class="footer-about">
-            <h3><i class="fas fa-leaf"></i> 生态守护者</h3>
-            <p>致力于传播日常环保知识，让每个人都能轻松参与地球保护。</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-            </div>
-        </div>
-        <div class="footer-links">
-            <h4>快速链接</h4>
-            <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="daily.html">日常环保</a></li>
-                <li><a href="news.html">新闻动态</a></li>
-                <li><a href="forum.html">论坛</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <p><i class="fas fa-phone-alt"></i> 环保热线 123-4567</p>
-        </div>
-    </div>
-</footer><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>日常环保 - 守护自然</title>
- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="header">
@@ -79,12 +56,22 @@
                 <p>可回收物、厨余垃圾、有害垃圾、其他垃圾要分清。</p>
             </div>
         </div>
+
+        <!-- 添加每日环保挑战区块 -->
+        <div class="daily-challenge" style="background: linear-gradient(135deg, #e0f0e8, #c8e0d4); border-radius: 32px; padding: 30px; text-align: center; margin: 40px 0;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">✨ 今日环保挑战</h3>
+            <div id="dailyChallenge" class="challenge-text" style="font-size: 1.2rem; background: white; display: inline-block; padding: 12px 24px; border-radius: 60px; margin: 15px 0; font-weight: 600;">
+                自带水杯，拒绝瓶装水一天
+            </div>
+            <button id="newChallengeBtn" class="tip-btn" style="background: #2c6e49; color: white; border: none; padding: 10px 24px; border-radius: 40px; font-size: 1rem; cursor: pointer; display: block; margin: 10px auto;">换一个挑战</button>
+        </div>
     </div>
 </main>
 
 <button id="backToTop" class="back-to-top">↑</button>
+
 <script src="script.js"></script>
-    <script>
+<script>
     // 每日环保挑战数据
     const challenges = [
         "自带水杯，拒绝瓶装水一天",
