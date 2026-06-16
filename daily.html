@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<footer class="site-footer">
+    <div class="container footer-container">
+        <div class="footer-about">
+            <h3><i class="fas fa-leaf"></i> 生态守护者</h3>
+            <p>致力于传播日常环保知识，让每个人都能轻松参与地球保护。</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="daily.html">日常环保</a></li>
+                <li><a href="news.html">新闻动态</a></li>
+                <li><a href="forum.html">论坛</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 环保热线 123-4567</p>
+        </div>
+    </div>
+</footer><!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -61,5 +84,35 @@
 
 <button id="backToTop" class="back-to-top">↑</button>
 <script src="script.js"></script>
+    <script>
+    // 每日环保挑战数据
+    const challenges = [
+        "自带水杯，拒绝瓶装水一天",
+        "午餐光盘，不剩一粒米",
+        "步行或骑行代替开车3公里",
+        "收集快递箱，送到回收站",
+        "洗澡时间控制在5分钟内",
+        "拒绝塑料袋，用布袋购物",
+        "将厨余垃圾单独分类",
+        "看完电视拔掉插头",
+        "用洗菜水浇花一次",
+        "发一条环保动态，影响朋友"
+    ];
+
+    const challengeEl = document.getElementById('dailyChallenge');
+    const challengeBtn = document.getElementById('newChallengeBtn');
+
+    function updateRandomChallenge() {
+        const randomIndex = Math.floor(Math.random() * challenges.length);
+        challengeEl.textContent = challenges[randomIndex];
+    }
+
+    if (challengeBtn) {
+        challengeBtn.addEventListener('click', updateRandomChallenge);
+    }
+
+    // 页面加载时随机选一个挑战
+    updateRandomChallenge();
+</script>
 </body>
 </html>
