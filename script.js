@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 8,
                 year: 2025,
-                title: '黄河沿线省份加快实施生态修复工程，水质明显改善',
-                summary: '黄河干流全线水质达到Ⅱ类标准，流域内退耕还湿、还草面积累计超500万亩，生物多样性逐步恢复。',
+                title: '2025年黄河三角洲自然保护区生态补水圆满完成',
+                summary: '据水利部网站消息，随着黄河调水调沙结束，2025年调水调沙期间黄河三角洲自然保护区生态补水工作圆满完成。',
                 image: 'replace.jpg',
-                date: '2025-11-10',
-                link: 'https://news.cctv.com/2025/11/10/ARTIdef456789012.shtml'
+                date: '2025-07-16',
+                link: 'https://news.cctv.com/2025/07/16/ARTIaFwExbhZQhBIG8IQrwU9250716.shtml'
             },
             // 2024年
             {
@@ -145,11 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 10,
                 year: 2024,
-                title: '全国PM2.5浓度同比下降6%，蓝天保卫战成效显著',
-                summary: '2024年，全国重点区域大气污染治理取得新突破，京津冀及周边地区PM2.5浓度同比下降8%，优良天数比例增加2个百分点。',
-                image: 'check.jpg',
-                date: '2024-10-15',
-                link: 'https://news.cctv.com/2024/10/15/ARTIjkl012345678.shtml'  // 请替换为实际链接，或搜索标题获取
+                title: '“数”说2024年我国渔业生态环境状况总体保持稳定',
+                summary: '农业农村部、生态环境部5日联合发布《中国渔业生态环境状况公报（2024）》。公报显示，2024年我国渔业生态环境状况总体保持稳定。',
+                image: 'fish.jpg',
+                date: '2025-08-06',
+                link: 'https://news.cctv.com/2025/08/06/ARTIjXHVnqemC1vsWAcM4Ybv250806.shtml' 
             },
             // 2023年
             {
