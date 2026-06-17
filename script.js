@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2026,
                 title: '焦点访谈｜建言献策共护一江清水 长江生态环境修复交出亮丽答卷',
                 summary: '过去五年，各民主党派中央、无党派人士持续开展了长江生态环境保护民主监督工作，协助地方持续推进长江生态环境保护修复，取得了丰硕的成果。',
-                image: 'https://picsum.photos/id/104/400/200',
+                image: 'river.png',
                 date: '2026-06-16',
                 link: 'https://news.cctv.com/2026/06/16/ARTIWGQHqunsOUeUvt2bt7DB260616.shtml'
             },
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2026,
                 title: '总台看浙江｜智慧监测护生态 绿色发展增动能',
                 summary: '浙江提出"聚焦聚力以双碳引领全面绿色转型，加快建设更高水平生态省、打造美丽浙江"，科技赋能精准保护，系统治理绿色发展。',
-                image: 'https://picsum.photos/id/29/400/200',
+                image: 'carbon.jpg',
                 date: '2026-06-15',
                 link: 'https://content-static.cctvnews.cctv.com/snow-book/video.html?item_id=12649039618109276534'
             },
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2026,
                 title: '我国海洋生态保护修复取得新成效',
                 summary: '全国283个海湾中，168个海湾优良水质面积比例超过85%，117个海湾实现全域优良水质，珍稀物种栖息地得到有效保护。',
-                image: 'https://picsum.photos/id/22/400/200',
+                image: 'sea.jpg',
                 date: '2026-06-13',
                 link: 'https://news.cctv.com/2026/06/13/ARTIW3naqDauljYjaCD9wIVV260613.shtml'
             },
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2026,
                 title: '讲述人与自然和谐共生"武夷故事"',
                 summary: '武夷山市作为全国生态文明建设典型代表，在现场生动分享生态保护、茶产业绿色转型与"两山"转化的实践经验。',
-                image: 'https://picsum.photos/id/96/400/200',
+                image: 'wuyi.jpg',
                 date: '2026-06-12',
                 link: 'https://eco.cctv.cn/2026/06/12/ARTIxXvDAfSpeJApmx4n8zd7260612.shtml'
             },
@@ -100,16 +100,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2026,
                 title: '科技赋能让生态环境保护向"新"向"绿"向"智"',
                 summary: '中国科协发布了2025年度中国生态环境十大科技进展，展现我国生态环境科技领域前沿发展动态，AI赋能动物种群监测大幅降低人力成本。',
-                image: 'https://picsum.photos/id/127/400/200',
+                image: 'wind-power.jpg',
                 date: '2026-06-05',
-                link: 'https://news.cctv.com/2026/06/05/ARTIiXvpSgwSsP2TfSydPM2l260605.shtml'
+                link: 'sloar-panel.jpg'
             },
             {
                 id: 6,
                 year: 2026,
                 title: '亮眼数字勾勒2025年中国生态环境状况"成绩单"',
                 summary: '2025年全国地表水优良水质比例为91.4%，全国森林覆盖率达到25.09%，PM2.5浓度累计下降20%，生态环境质量持续改善。',
-                image: 'https://picsum.photos/id/225/400/200',
+                image: 'green.jpg',
                 date: '2026-06-05',
                 link: 'https://news.cctv.com/2026/06/05/ARTIicMnxwSsOV5GROdGX8H0260605.shtml'
             },
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2025,
                 title: '我国生态保护修复取得明显成效，森林覆盖率持续提升',
                 summary: '国家林草局发布数据显示，2025年新增造林面积1.2亿亩，草原综合植被盖度提高到56.8%，湿地保护率超过52%。',
-                image: 'https://picsum.photos/id/127/400/200',
+                image: 'green-mountain.jpg',
                 date: '2025-12-20',
                 link: 'https://news.cctv.com/2025/12/20/ARTIabc123456789.shtml'
             },
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 2025,
                 title: '黄河沿线省份加快实施生态修复工程，水质明显改善',
                 summary: '黄河干流全线水质达到Ⅱ类标准，流域内退耕还湿、还草面积累计超500万亩，生物多样性逐步恢复。',
-                image: 'https://picsum.photos/id/29/400/200',
+                image: 'replace.jpg',
                 date: '2025-11-10',
                 link: 'https://news.cctv.com/2025/11/10/ARTIdef456789012.shtml'
             },
@@ -136,42 +136,41 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 9,
                 year: 2024,
-                title: '推动绿色发展 建设美丽中国——2024年生态文明建设综述',
+                title: '2024，美丽中国建设稳步推进',
                 summary: '2024年，全国地级及以上城市PM2.5浓度同比下降6%，优良天数比例达到85.5%，环境质量持续向好。',
-                image: 'https://picsum.photos/id/22/400/200',
-                date: '2024-12-30',
-                link: 'https://news.cctv.com/2024/12/30/ARTIghi789012345.shtml'
+                image: 'city.jpg',
+                date: '2024-12-24',
+                link: 'https://news.cctv.com/2024/12/24/ARTIX7KblQXuF9yY3iBl8rkw241224.shtml'
             },
             {
                 id: 10,
                 year: 2024,
                 title: '全国PM2.5浓度同比下降6%，蓝天保卫战成效显著',
                 summary: '2024年，全国重点区域大气污染治理取得新突破，京津冀及周边地区PM2.5浓度同比下降8%，优良天数比例增加2个百分点。',
-                image: 'https://picsum.photos/id/96/400/200',
+                image: 'check.jpg',
                 date: '2024-10-15',
-                link: 'https://news.cctv.com/2024/10/15/ARTIjkl012345678.shtml'
+                link: 'https://news.cctv.com/2024/10/15/ARTIjkl012345678.shtml'  // 请替换为实际链接，或搜索标题获取
             },
             // 2023年
             {
                 id: 11,
                 year: 2023,
-                title: '生态文明建设持续推进 我国可再生能源装机历史性超过火电',
-                summary: '截至2023年底，我国可再生能源装机容量达到14.5亿千瓦，占全部发电装机的比重首次超过50%，为全球能源转型贡献中国力量。',
-                image: 'https://picsum.photos/id/104/400/200',
-                date: '2023-12-28',
-                link: 'https://news.cctv.com/2023/12/28/ARTImno345678901.shtml'
+                title: '全国生态保护红线划定工作完成',
+                summary: '自然资源部宣布，全国生态保护红线划定工作全面完成，覆盖面积约319万平方公里，筑牢国家生态安全屏障。',
+                image: 'carbon.jpg',
+                date: '2023-04-22',
+                link: 'https://news.cctv.com/2023/04/22/ARTIOzZExoUD5ATLTlLBqXmZ230422.shtml'
             },
             {
                 id: 12,
                 year: 2023,
-                title: '首次全国生态保护红线划定完成，覆盖面积超300万平方公里',
-                summary: '生态保护红线覆盖了全国重要生态功能区、生态敏感区和脆弱区，为我国生态安全格局提供了基础保障。',
-                image: 'https://picsum.photos/id/225/400/200',
-                date: '2023-11-08',
-                link: 'https://news.cctv.com/2023/11/08/ARTIpqr678901234.shtml'
+                title: '第三轮第一批中央生态环境保护督察全面进入下沉工作阶段',
+                summary: '中央生态环境保护督察组进驻福建、河南、海南、甘肃、青海5省，开展为期1个月的督察工作。',
+                image: 'military-green.jpg',
+                date: '2023-12-06',
+                link: 'https://news.cctv.com/2023/12/06/ARTI...'  // 请替换为实际链接，或搜索标题获取
             }
         ];
-
         var grid = document.getElementById('newsGrid');
         var filterBtns = document.querySelectorAll('.filter-btn');
         if (!grid) return;
