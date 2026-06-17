@@ -354,3 +354,163 @@ body {
     .slide-content p { font-size: 1rem; }
     .banner { height: 50vh; min-height: 300px; }
 }
+/* ===== 深色模式 ===== */
+body.dark {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark .header {
+    background: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .logo {
+    color: #a8d8a8;
+}
+
+body.dark .nav-list a {
+    color: #b0b0b0;
+}
+body.dark .nav-list a:hover,
+body.dark .nav-list a.active {
+    color: #7bc97b;
+}
+
+body.dark .card {
+    background: #2a2a4a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+body.dark .card p {
+    color: #c0c0c0;
+}
+body.dark .card-link {
+    color: #7bc97b;
+}
+
+body.dark .section-title {
+    color: #a8d8a8;
+}
+
+body.dark .filter-btn {
+    background: #2a2a4a;
+    color: #b0b0b0;
+}
+body.dark .filter-btn.active,
+body.dark .filter-btn:hover {
+    background: #2c6e49;
+    color: white;
+}
+
+body.dark .news-card {
+    background: #2a2a4a;
+}
+body.dark .news-title {
+    color: #a8d8a8;
+}
+body.dark .news-summary {
+    color: #c0c0c0;
+}
+body.dark .news-date {
+    color: #8a9a8a;
+}
+body.dark .news-link {
+    color: #7bc97b;
+}
+
+body.dark .stats-section {
+    background: #22223a;
+}
+body.dark .stat-item i {
+    color: #7bc97b;
+}
+body.dark .stat-number {
+    color: #e0e0e0;
+}
+
+body.dark .pledge-section {
+    background: #1e1e36;
+}
+body.dark .pledge-form-area {
+    background: #2a2a4a;
+}
+body.dark .form-group input,
+body.dark .form-group textarea {
+    background: #3a3a5a;
+    border-color: #4a4a6a;
+    color: #e0e0e0;
+}
+body.dark .pledge-list li {
+    background: #3a3a5a;
+    color: #e0e0e0;
+}
+
+body.dark .cta-section {
+    background: linear-gradient(135deg, #1a3a2a, #0a2a1a);
+}
+
+body.dark .site-footer {
+    background: #0a0a1a;
+}
+
+body.dark .back-to-top {
+    background: #2c6e49;
+}
+body.dark .back-to-top:hover {
+    background: #1f5438;
+}
+
+body.dark .forum-status-bar {
+    background: #2a2a4a;
+}
+body.dark .user-info {
+    color: #a8d8a8;
+}
+body.dark .post-form-area {
+    background: #2a2a4a;
+    border-color: #3a3a5a;
+}
+body.dark .post-card {
+    background: #2a2a4a;
+    border-color: #3a3a5a;
+}
+body.dark .post-title {
+    color: #a8d8a8;
+}
+body.dark .post-header {
+    color: #8a9a8a;
+}
+
+body.dark .modal-content {
+    background: #2a2a4a;
+    color: #e0e0e0;
+}
+body.dark .modal-tabs {
+    border-bottom-color: #4a4a6a;
+}
+body.dark .tab-btn {
+    color: #8a9a8a;
+}
+body.dark .tab-btn.active {
+    color: #7bc97b;
+}
+body.dark .auth-form input {
+    background: #3a3a5a;
+    border-color: #4a4a6a;
+    color: #e0e0e0;
+}
+
+/* 日常环保页面适配 */
+body.dark .daily-challenge {
+    background: linear-gradient(135deg, #1a3a2a, #2a4a3a) !important;
+}
+body.dark .challenge-text {
+    background: #2a2a4a !important;
+    color: #e0e0e0;
+}
+body.dark .tip-btn {
+    background: #2c6e49;
+}
+body.dark .tip-btn:hover {
+    background: #1f5438;
+}
